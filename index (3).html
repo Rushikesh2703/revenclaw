@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced SQL Query Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="index(3).css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-database-check"></i>
+                <span class="ms-2">SQL Query Checker Pro</span>
+            </a>
+            <img src="images/Ravenclaw-Logo.png" alt="Ravenclaw Logo" class="navbar-logo">
+            <span class="badge bg-light text-dark">
+                <i class="bi bi-lightning-charge"></i>
+                Ravenclaw
+            </span>
+        </div>
+    </nav>
+    
+
+        <div class="container py-4">
+            <div class="card main-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="editor-section">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <label for="sqlInput" class="form-label mb-0">
+                                        <i class="bi bi-code-square"></i>
+                                        SQL Query Editor
+                                    </label>
+                                    <div class="editor-actions">
+                                        <button id="formatBtn" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-text-indent-left"></i>
+                                            Format
+                                        </button>
+                                        <button id="clearBtn" class="btn btn-sm btn-outline-danger ms-2">
+                                            <i class="bi bi-trash"></i>
+                                            Clear
+                                        </button>
+                                    </div>
+                                </div>
+                                <textarea id="sqlInput" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="validation-section">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="mb-0">
+                                        <i class="bi bi-check-circle"></i>
+                                        Validation Results
+                                    </h5>
+                                    <div id="statusIndicator" class="status-indicator">
+                                        <div class="spinner-border spinner-border-sm text-primary d-none" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="errorList" class="list-group error-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-lightbulb"></i>
+                        Quick Tips
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="tip-card">
+                                <i class="bi bi-keyboard"></i>
+                                <strong>Keyboard Shortcuts</strong>
+                                <p>Ctrl + Space: Autocomplete<br>Ctrl + F: Find</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tip-card">
+                                <i class="bi bi-magic"></i>
+                                <strong>Auto-formatting</strong>
+                                <p>Click the Format button to automatically format your SQL query</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tip-card">
+                                <i class="bi bi-check2-circle"></i>
+                                <strong>Real-time Validation</strong>
+                                <p>Errors are checked as you type with a 500ms delay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/sql-hint.min.js"></script>
+    <script src="index(3).js"></script>
+</body>
+</html>

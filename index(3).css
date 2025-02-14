@@ -1,0 +1,184 @@
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar-logo {
+    height: 60px;  /* Adjust size if needed */
+    width: auto;
+    display: block;
+    margin: auto;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px; /* Adjust vertical position */
+    height: 40px;
+}
+
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.editor-section, .validation-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.CodeMirror {
+    height: 400px !important;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.error-list {
+    max-height: 350px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.error-item {
+    border-left: 4px solid #dc3545;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.error-item:hover {
+    transform: translateX(4px);
+    background-color: #fff5f5;
+}
+
+.error-item .error-line {
+    font-weight: 600;
+    color: #dc3545;
+}
+
+.error-item .error-message {
+    color: #343a40;
+}
+
+.error-item .error-suggestion {
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.tip-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-2px);
+}
+
+.tip-card i {
+    font-size: 1.5rem;
+    color: #4a00e0;
+    margin-bottom: 0.5rem;
+}
+
+.tip-card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #343a40;
+}
+
+.tip-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.highlighted-line {
+    background-color: rgba(255, 238, 186, 0.5) !important;
+}
+
+.bg-warning {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Add styles for spell check highlighting */
+.cm-spelling-error {
+    text-decoration: wavy underline red;
+    text-decoration-skip-ink: none;
+}
+
+/* Add styles for the correction notification */
+.alert {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+    }
+    to {
+        transform: translate(-50%, 0);
+    }
+}
